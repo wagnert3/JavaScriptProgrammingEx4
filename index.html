@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript and HTML</title>
+    <script>    
+        alert('Hello from emedded JavaScript!');
+
+        let a = prompt('Value 1:', 0);
+        let b = prompt('Value 2:', 0);
+        let c = a +b; // these are strings
+
+        alert(c);
+        console.log(`The value of c is ${c}`);
+
+        let d = parseInt(a);
+        let e = parseInt(b);
+        let f = d + e;
+
+        alert(f);
+        console.log(f);
+
+        let isTheInputNumeric = prompt(`Enter a number`); // now use in the html body
+
+
+    </script>
+</head>
+<body>
+    <h1>   HTML and JavaScript Exercise</h1>
+    <script>
+
+        document.write(`<p>The input <b>${isTheInputNumeric}</b> is numeric, true or false?</p>`);
+        document.write(`<p>${!isNaN(isTheInputNumeric)}</p>`);
+        document.write(`<p>My current url is: ${window.location}</em></p>`);
+
+        let lastPrompt =prompt(`Enter anything`);
+        document.write(`<p>${lastPrompt}</p>`);
+    </script>
+
+</body>
+</html>
