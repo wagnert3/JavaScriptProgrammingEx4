@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+body { 
+    padding: 10px;
+    font-family:Arial, Helvetica, sans-serif;
+    }
+    </style>
+        <script>
+        let year = prompt('Provide a birth year')
+        let month = prompt('Provide a birth month')
+        let day = prompt('Provide a birth day')
+        let seconds = prompt('Provide a number of seconds')
+
+        let birthDate;
+        let age;
+        let newDate;
+
+        
+        try {
+            let x = 'y';
+            if (isNaN(year + month + day + seconds)) { // if there is any alfa numeric
+                // Error
+                throw new Error('At least one input was invalid') // Error is a class, thats why we use new
+               
+            } 
+            //alert('Goog to continue') 
+            birthDate = new Date(year, month -1, day-1); //index month starts with zero.
+
+            let days = seconds/86400; 
+            let nextDate = birthDate.getDate() + days // will get number of days
+
+            console.log(nextDate)
+
+            newDate = new Date(year, month - 1, day)
+            newDate.setDate(nextDate)
+            age = newDate.getFullYear() - birthDate.getFullYear();
+
+        } catch (error) {
+            alert(error.message);
+            window.location = window.location; // redirect to itself REFRESH
+            
+        }
+
+    </script>
+    </head>
+    <body>
+        <h1>Age Calculator</h1>
+        <p>Provided Birthday:
+             <script>document.write(birthDate);</script></p>
+        <p>Number of seconds from the user:
+            <script>document.write(seconds);</script> </p>
+        <p>Future Date:
+            <script>document.write(newDate);</script></p>
+        <p>Age in the year 
+            <script>document.write(year);</script> 
+            will be: 
+            <script>document.write(age);</script></p>
+    </body>
+</html>
